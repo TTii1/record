@@ -1,0 +1,7 @@
+# 运行语音转写所需 Python 包
+# 公司有内网 pip 镜像，可以直接用 pip install -r requirements.txt 安装
+faster-whisper>=1.0.0
+sounddevice>=0.4.6
+numpy>=1.24
+pynput>=1.7.6
+pyperclip>=1.8.2

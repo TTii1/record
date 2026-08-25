@@ -1,0 +1,2 @@
+# 仅在“有外网/能访问 ModelScope 的电脑”上下载模型时需要
+modelscope>=1.15.0

@@ -1,0 +1,15 @@
+# Python 虚拟环境
+stt-venv/
+
+# 模型文件（体积大，用 download_model.py 重新下载）
+models/
+
+# 个人录音缓存
+recordings/
+
+# 安装包
+*.deb
+
+# Python 缓存
+__pycache__/
+*.pyc
