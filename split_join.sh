@@ -89,9 +89,13 @@ cmd_join() {
     if [ "$#" -gt 0 ]; then
         parts=("$@")
     else
+        # 自动模式：只匹配与输出文件同名的分块（如 record_free.tar.gz.000.deb），
+        # 避免误拼目录里其他无关的 .deb 文件
+        local pattern
+        pattern="$(basename "$out").*.deb"
         shopt -s nullglob
-        parts=(./*.deb)
-        [ "${#parts[@]}" -gt 0 ] || { echo "错误: 未指定分块，且当前目录没有 .deb 文件" >&2; exit 1; }
+        parts=(./$pattern)
+        [ "${#parts[@]}" -gt 0 ] || { echo "错误: 未指定分块，且当前目录没有匹配 $pattern 的分块" >&2; exit 1; }
     fi
 
     # 按编号排序
